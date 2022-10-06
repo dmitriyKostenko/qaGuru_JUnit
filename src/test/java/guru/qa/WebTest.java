@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class WebTest {
 
-    @ValueSource(strings = {"Санкт-Петербург", "Краснодар"})
+    @ValueSource(strings = {"Санкт-Петербург", "Москва"})
     @ParameterizedTest(name = "Проверка числа результатов в строке поиска Gismeteo для запроса {0}")
     void gismeteoSearchCommonTest(String testData) {
         open("https://www.gismeteo.ru/");
@@ -41,9 +41,9 @@ public class WebTest {
 
     static Stream<Arguments> wikipediaSiteMenuTextDataProvider() {
         return Stream.of(
-                Arguments.of(List.of("Main page", "Contents", "Current events", "Random article", "About Wikipedia", "Contact us", "Donate"), Locale.en),
-                Arguments.of(List.of("Pagina principale", "Ultime modifiche", "Una voce a caso", "Nelle vicinanze", "Vetrina", "Aiuto", "Sportello informazioni"), Locale.it),
-                Arguments.of(List.of("Hauptseite", "Themenportale", "Zufälliger Artikel"), Locale.de)
+                Arguments.of(List.of("Main page", "Contents", "Current events", "Random article", "About Wikipedia", "Contact us", "Donate"), Locale.EN),
+                Arguments.of(List.of("Pagina principale", "Ultime modifiche", "Una voce a caso", "Nelle vicinanze", "Vetrina", "Aiuto", "Sportello informazioni"), Locale.IT),
+                Arguments.of(List.of("Hauptseite", "Themenportale", "Zufälliger Artikel"), Locale.DE)
         );
     }
 
